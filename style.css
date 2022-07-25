@@ -70,20 +70,51 @@ body {
 }
 
 .todo_task {
+    cursor: default;
+    --size: 36px;
     display: flex;
+    min-height: var(--size);
     align-items: center;
+}
+
+.todo_task:hover .todo_task-del {
+    display: block;
 }
 
 .todo_checkbox {
     margin-right: 16px;
 }
 
+.todo_checkbox input {
+    display: none;
+}
+
+.todo_checkbox div {
+    --size: 28px;
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    position: relative;
+}
+
+.todo_checkbox div::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
 .todo_task-text {
     font-size: 20px;
 }
 
 .todo_task-del {
-    --size: 36px;
+    display: none;
     margin-left: auto;
     margin-right: 0;
     line-height: calc(var(--size) * 0.88);
