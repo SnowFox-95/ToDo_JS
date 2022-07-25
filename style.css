@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --accent: #EA5959FF;
+    --default: rgba(0, 0, 0, 0.3)
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--accent);
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.ToDo {
+    padding: 32px;
+    background-color: #FFFFFFFF;
+    width: 90vw;
+    border-radius: 16px;
+}
+
+.todo_content {
+}
+
+.todo_title {
+}
+
+.todo_new {
+    --size: 50px;
+    display: flex;
+    margin: 16px 0 32px;
+
+}
+
+.todo_new input {
+    margin-right: 16px;
+    font-size: 18px;
+    padding: 8px 16px;
+    height: var(--size);
+    border: 1px solid var(--default);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.todo_add,
+.todo_task-del {
+    cursor: pointer;
+    text-align: center;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    line-height: calc(var(--size) * 0.95);
+    font-size: 32px;
+    font-weight: 200;
+    background: var(--accent);
+    color: white;
+
+}
+
+.todo_list {
+}
+
+.todo_task {
+    display: flex;
+    align-items: center;
+}
+
+.todo_checkbox {
+    margin-right: 16px;
+}
+
+.todo_task-text {
+    font-size: 20px;
+}
+
+.todo_task-del {
+    --size: 36px;
+    margin-left: auto;
+    margin-right: 0;
+    line-height: calc(var(--size) * 0.88);
+    font-size: 44px;
+}
