@@ -3,6 +3,8 @@ const dom = {
     add: document.getElementById('add'),
     tasks: document.getElementById('tasks')
 }
+
+//Массив задач
 const tasks = [];
 
 
@@ -51,8 +53,8 @@ function tasksRender(list) {
         const cls = task.isComplete
             ? 'todo_task todo_task_complete'
             : 'todo_task'
-        const  checked = task.isComplete
-            ? 'checked': ''
+        const checked = task.isComplete
+            ? 'checked' : ''
         const taskHtml = `
         <div id="${task.id}" class="${cls}">
             <label class="todo_checkbox">
@@ -72,10 +74,24 @@ function tasksRender(list) {
     dom.tasks.innerHTML = htmlList
 }
 
-dom.tasks.onclick = (event) =>{
+//Отслеживаем клик по чекбоксу задачи
+dom.tasks.onclick = (event) => {
     const target = event.target
-    if (target.classList.contains('todo_checkbox-div')){
-        console.log(target)
-    }
+    const isCheckboxClickEl = target.classList.contains('todo_checkbox-div')
 
+    if (isCheckboxClickEl) {
+        const task = target.parentElement.parentElement
+        const taskId = task.getAttribute('id')
+        changeTaskStatus(taskId, tasks)
+        tasksRender(tasks)
+    }
+}
+
+//Функция изменения статуса задачи
+function changeTaskStatus(id, list) {
+    list.forEach((task) => {
+        if (task.id == id) {
+            task.isComplete = !task.isComplete
+        }
+    })
 }
