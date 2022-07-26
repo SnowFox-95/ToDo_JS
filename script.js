@@ -57,7 +57,7 @@ function tasksRender(list) {
         <div id="${task.id}" class="${cls}">
             <label class="todo_checkbox">
                 <input type="checkbox" ${checked}>
-                    <div></div>
+                <div class="todo_checkbox-div"></div>
             </label>
             <div class="todo_task-text">
                 ${task.text}
@@ -70,4 +70,12 @@ function tasksRender(list) {
     })
 
     dom.tasks.innerHTML = htmlList
+}
+
+dom.tasks.onclick = (event) =>{
+    const target = event.target
+    if (target.classList.contains('todo_checkbox-div')){
+        console.log(target)
+    }
+
 }
