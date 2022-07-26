@@ -11,6 +11,7 @@ dom.add.onclick = () => {
     const task = dom.new_task.value
     if (task) {
         addTask(task)
+        dom.new_task.value = ''
     }
 }
 
@@ -23,4 +24,5 @@ function addTask(text) {
         isComplete: false
     }
     tasks.push(task)
+    console.log(tasks)
 }
