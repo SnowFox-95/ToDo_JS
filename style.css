@@ -89,18 +89,29 @@ body {
     display: none;
 }
 
+.todo_checkbox input:checked+div {
+    background-color: var(--accent)
+}
+.todo_checkbox input:checked+div::after {
+    display: block;
+}
+
 .todo_checkbox div {
     --size: 28px;
+    cursor: pointer;
     height: var(--size);
     width: var(--size);
     border: 1px solid var(--accent);
     border-radius: 4px;
     position: relative;
+    color: white;
 }
 
 .todo_checkbox div::after {
-    content: '';
-    display: block;
+
+    text-align: center;
+    content: ' \2714';
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
