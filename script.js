@@ -22,5 +22,5 @@ function addTask(text) {
         text,
         isComplete: false
     }
-    tasks.push()
+    tasks.push(task)
 }
