@@ -8,9 +8,9 @@ const tasks = [];
 
 // Отслеживаем клик по кнопке Добавляем задачу
 dom.add.onclick = () => {
-    const task = dom.new_task.value
-    if (task) {
-        addTask(task)
+    const newTaskText = dom.new_task.value
+    if (newTaskText && isNotHaveTask(newTaskText, tasks)) {
+        addTask(newTaskText)
         dom.new_task.value = ''
     }
 }
@@ -28,14 +28,15 @@ function addTask(text) {
 }
 
 // Проверка существования задачи в массиве задач
-function checkTask(text, list) {
-    let isHave = false
+function isNotHaveTask(text, list) {
+    let isNotHave = true
+
     list.forEach((task) => {
         if (task.text === text) {
             alert('Задача уже существует!')
-            isHave = true
+            isNotHave = false
         }
     })
 
-    return isHave
+    return isNotHave
 }
