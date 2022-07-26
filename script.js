@@ -26,3 +26,16 @@ function addTask(text) {
     tasks.push(task)
     console.log(tasks)
 }
+
+// Проверка существования задачи в массиве задач
+function checkTask(text, list) {
+    let isHave = false
+    list.forEach((task) => {
+        if (task.text === text) {
+            alert('Задача уже существует!')
+            isHave = true
+        }
+    })
+
+    return isHave
+}
