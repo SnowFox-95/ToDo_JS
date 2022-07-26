@@ -81,7 +81,10 @@ body {
 .todo_task:hover .todo_task-del {
     display: block;
 }
-
+.todo_task_complete .todo_task-text{
+    text-decoration: line-through;
+    color: var(--default);
+}
 .todo_checkbox {
     margin-right: 16px;
 }

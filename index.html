@@ -12,17 +12,18 @@
             Все задачи
         </h1>
         <div class="todo_new">
-            <input type="text" placeholder="Новая задача">
-            <div class="todo_add">+</div>
+            <input id="new_task" type="text" placeholder="Новая задача">
+            <div id="add" class="todo_add">+</div>
         </div>
-        <div class="todo_list">
-            <div class="todo_task">
+        <div id="tasks" class="todo_list">
+            <div class="todo_task todo_task_complete">
                 <label class="todo_checkbox">
                     <input type="checkbox">
                     <div></div>
                 </label>
                 <div class="todo_task-text">
-                    Lorem ipsum dolor sit amet.</div>
+                    Lorem ipsum dolor sit amet.
+                </div>
                 <div class="todo_task-del">-</div>
             </div>
             <div class="todo_task">
@@ -31,7 +32,8 @@
                     <div></div>
                 </label>
                 <div class="todo_task-text">
-                    Emeritis barcass ducunt ad homo.</div>
+                    Emeritis barcass ducunt ad homo.
+                </div>
                 <div class="todo_task-del">-</div>
             </div>
         </div>
